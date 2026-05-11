@@ -17,5 +17,16 @@
             <ColumnDefinition Width="260"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="#1D4ED8" Padding="18">
+            <TextBlock Text="Race Control Dashboard" 
+                       Foreground="White" 
+                       FontSize="26" 
+                       FontWeight="Bold"/>
+        </Border>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#DBEAFE" Padding="10">
+            <TextBlock Text="Dzisiaj monitorujemy punkt kontrolny: Przełęcz Kondracka." 
+                       Foreground="1E3A8A" 
+                       FontSize="14"/>
+        </Border>
     </Grid>
 </Window>
