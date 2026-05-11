@@ -19,6 +19,17 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="190"/>
             <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>    
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Race Cutoff Judge" FontSize="30" FontWeight="Bold" Margin="0,0,0,22"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Imię" FontSize="14" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="FirstNameTextBox" Height="20" Margin="0,5"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Nazwisko" FontSize="14" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="LastNameTextBox" Height="20" Margin="0,5"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Czas na punkcie [min]" FontSize="14" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="TimeTextBox" Height="20" Margin="0,5"/>
     </Grid>
 </Window>
