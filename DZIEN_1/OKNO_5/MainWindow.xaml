@@ -33,8 +33,38 @@
                 <TextBox x:Name="FirstNameTextBox"
                          Height="34"
                          FontSize="15" />
-
-
+            </StackPanel>
+            <StackPanel Grid.Row="2"
+            Margin="0,0,0,14">
+                <TextBlock Text="Nazwisko"
+               FontWeight="SemiBold"
+               Margin="0,0,0,4"/>
+                <TextBox x:Name="LastNameTextBox"
+             Height="34"
+             FontSize="15" />
+            </StackPanel>
+            <StackPanel Grid.Row="3"
+            Margin="0,0,0,14">
+                <TextBlock Text="Distance"
+               FontWeight="SemiBold"
+               Margin="0,0,0,4"/>
+                <ComboBox x:Name="DistanceComboBox"
+                          Height="34"
+                          FontSize="15">
+                    <ComboBoxItem Content="Trail 33km"/>
+                    <ComboBoxItem Content="Ultra 45km"/>
+                    <ComboBoxItem Content="Winter 50km"/>
+                    <ComboBoxItem Content="Vertical 10km"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row="4"
+            Margin="0,0,0,14">
+                <TextBlock Text="Data startu"
+               FontWeight="SemiBold"
+               Margin="0,0,0,4"/>
+               <DatePicker x:Name="StartDatePicker"
+                           Height="34"
+                           FontSize="15"/>
             </StackPanel>
         </Grid>
     </ScrollViewer>
