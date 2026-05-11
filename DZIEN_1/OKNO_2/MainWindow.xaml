@@ -44,5 +44,38 @@
                     Height="36"/>
             
         </StackPanel>
+        <Grid Grid.Row="2"
+              Grid.Column="1"
+              Background="#F8FAFC">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Padding="24">
+                <TextBlock Text="Tutaj pojawi się główna część aplikacji"
+                           FontSize="22"
+                           TextWrapping="Wrap"/>
+            </Border>
+            <Border Grid.Row="1"
+                    Background="#E0F2FE"
+                    Padding="14"
+                    Margin="24">
+                <TextBlock Text="Panel szczegółów: brak wybranego zawodnika"
+                            FontSize="22"
+                            TextWrapping="Wrap"/>
+            </Border>
+
+            <Border Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Background="#CBD5E1"
+                    Padding="10">
+                <TextBlock Text="Status: aplikacja gotowa"/>
+            </Border>
+
+
+
+        </Grid>
     </Grid>
 </Window>
