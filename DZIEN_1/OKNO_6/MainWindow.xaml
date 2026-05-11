@@ -31,5 +31,13 @@
 
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Czas na punkcie [min]" FontSize="14" VerticalAlignment="Center"/>
         <TextBox Grid.Row="3" Grid.Column="1" Name="TimeTextBox" Height="20" Margin="0,5"/>
+
+        <Button Grid.Row="4" Grid.Column="1" Content="Oceń zawodnika" Name="JudgeButton" Height="40" Width="180" HorizontalAlignment="Left" Margin="0,14,0,0"></Button>
+
+        <Border Grid.Row="5" Grid.ColumnSpan="2" BorderBrush="Gray" Background="CornflowerBlue" CornerRadius="14" Padding="18" BorderThickness="1" Margin="0,25,0,0">
+            <TextBlock Name="ResultTextBlock" Text="Wynik oceny zawodnika pojawi się tutaj...." FontSize="20" FontWeight="SemiBold" Foreground="White" TextWrapping="Wrap"/>
+
+        </Border>
+
     </Grid>
 </Window>
