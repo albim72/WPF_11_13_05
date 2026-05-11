@@ -1,0 +1,19 @@
+<Window x:Class="okno1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:okno1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="360" Width="560">
+    <Grid Background="#F8FAFC">
+        <StackPanel>
+            <Border BorderBrush="Black" BorderThickness="1" Padding="10" Margin="10" CornerRadius="8" Background="#FF6D6C8C">
+            <TextBlock Text="Witaj w WPF!" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,12" />
+            </Border>
+            <TextBlock Text="XAML buduje widok, C# dodaje zachowanie!" FontSize="16" HorizontalAlignment="Center" Margin="0,40,0,1"/>
+            <TextBlock Text="To jest trzeci textblock" FontSize="16" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
