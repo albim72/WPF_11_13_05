@@ -28,5 +28,21 @@
                        Foreground="1E3A8A" 
                        FontSize="14"/>
         </Border>
+        <StackPanel Grid.Row="2"
+                    Grid.Column="0"
+                    Background="#E2E8F0">
+            <Button Content="Zawodnicy"
+                    Margin="0,0,0,8"
+                    Height="36"/>
+            <Button Content="Punkty Kontrolne"
+                    Margin="0,0,0,8"
+                    Height="36"/>
+            <Button Content="Raaport"
+                    Margin="0,0,0,8"
+                    Height="36"/>
+            <Button Content="Ustawienia" 
+                    Height="36"/>
+            
+        </StackPanel>
     </Grid>
 </Window>
