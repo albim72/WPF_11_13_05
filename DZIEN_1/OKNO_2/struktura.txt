@@ -1,0 +1,14 @@
+Window
+└── Grid
+    ├── Grid.RowDefinitions
+    ├── Grid.ColumnDefinitions
+    ├── Border, nagłówek
+    │   └── TextBlock
+    ├── StackPanel, menu boczne
+    │   ├── Button
+    │   ├── Button
+    │   └── Button
+    ├── Border, treść główna
+    │   └── TextBlock
+    └── Border, pasek statusu
+        └── TextBlock
