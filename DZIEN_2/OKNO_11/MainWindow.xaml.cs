@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace PropertyChanged
+{
+    /// <summary>
+    /// Logika interakcji dla klasy MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            DataContext = new RunneryViewModel();
+        }
+    }
+    public class RunneryViewModel : INotifyPropertyChanged
+    {
+        private string _firstName = "Jan";
+        private string _lastName = "Kowalski";
+
+        public string FirstName
+        {
+            get => _firstName;
+            set
+            {
+               if(_firstName == value) return;
+                _firstName = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(FullName));
+            }
+        }
+
+        public string LastName
+        {
+            get => _lastName;
+            set
+            {
+                if (_lastName == value) return;
+                _lastName = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(FullName));
+            }
+        }
+
+        public string FullName => $"{FirstName} {LastName}";
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+    }
+}
