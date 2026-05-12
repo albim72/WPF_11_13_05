@@ -1,0 +1,20 @@
+<Window x:Class="WpfDay2Exercise05.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ćwiczenie 5 - ComboBox Binding" Height="420" Width="680">
+    <StackPanel Margin="28">
+        <TextBlock Text="Wybór dystansu" FontSize="30" FontWeight="Bold" Margin="0,0,0,20" />
+
+        <TextBlock Text="Dystans" FontWeight="SemiBold" />
+        <ComboBox ItemsSource="{Binding Distances}"
+                  SelectedItem="{Binding SelectedDistance, Mode=TwoWay}"
+                  Height="36" FontSize="16" Margin="0,6,0,20" />
+
+        <Border Background="#FEF9C3" BorderBrush="#FACC15" BorderThickness="1" CornerRadius="12" Padding="18">
+            <StackPanel>
+                <TextBlock Text="Wybrano:" FontWeight="Bold" FontSize="18" />
+                <TextBlock Text="{Binding SelectedDistance}" FontSize="26" Margin="0,8,0,0" />
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</Window>
