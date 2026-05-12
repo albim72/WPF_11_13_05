@@ -1,0 +1,40 @@
+<Window x:Class="WpfDay2Exercise07.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ćwiczenie 7 - Style i zasoby" Height="500" Width="720">
+    <Window.Resources>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#2563EB" />
+        <SolidColorBrush x:Key="PanelBrush" Color="#F8FAFC" />
+        <SolidColorBrush x:Key="BorderBrushSoft" Color="#CBD5E1" />
+
+        <Style x:Key="InputTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="36" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="0,4,0,14" />
+            <Setter Property="Padding" Value="8,4" />
+        </Style>
+
+        <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="42" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="12,4" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource PanelBrush}" Margin="24">
+        <Border Background="White" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1" CornerRadius="14" Padding="24">
+            <StackPanel>
+                <TextBlock Text="Formularz ze stylami" FontSize="30" FontWeight="Bold" Margin="0,0,0,20" />
+                <TextBlock Text="Imię" />
+                <TextBox Style="{StaticResource InputTextBoxStyle}" />
+                <TextBlock Text="Nazwisko" />
+                <TextBox Style="{StaticResource InputTextBoxStyle}" />
+                <TextBlock Text="Miasto" />
+                <TextBox Style="{StaticResource InputTextBoxStyle}" />
+                <Button Style="{StaticResource PrimaryButtonStyle}" Content="Zapisz" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
