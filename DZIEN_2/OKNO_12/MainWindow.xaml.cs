@@ -1,53 +1,69 @@
-using System.Collections.ObjectModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
-namespace WpfDay2Exercise04;
-
-public partial class MainWindow : Window
+namespace Observable
 {
-    private readonly MainViewModel _viewModel = new();
-
-    public MainWindow()
+    /// <summary>
+    /// Logika interakcji dla klasy MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
     {
-        InitializeComponent();
-        DataContext = _viewModel;
-    }
 
-    private void AddButton_Click(object sender, RoutedEventArgs e)
-    {
-        string firstName = FirstNameTextBox.Text.Trim();
-        string lastName = LastNameTextBox.Text.Trim();
-
-        if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
+        private readonly MainViewModel _viewModel = new();
+        public MainWindow()
         {
-            MessageBox.Show("Podaj imię i nazwisko.");
-            return;
+            InitializeComponent();
+            DataContext = _viewModel;
         }
 
-        _viewModel.Runners.Add(new Runner(firstName, lastName));
-        FirstNameTextBox.Clear();
-        LastNameTextBox.Clear();
-    }
-}
+        private void AddRunnerButton_Click(object sender, RoutedEventArgs e)
+        {
+            string firstName = FirstNameTextBox.Text.Trim();
+            string lastName = LastNameTextBox.Text.Trim();
 
-public class MainViewModel
-{
-    public ObservableCollection<Runner> Runners { get; } = new()
+            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
+            {
+                MessageBox.Show("Podaj imię i nazwisko.");
+                return;
+            }
+
+            _viewModel.Runners.Add(new Runner(firstName, lastName));
+            FirstNameTextBox.Clear();
+            LastNameTextBox.Clear();
+        }
+    }
+    public class MainViewModel
+    {
+        public ObservableCollection<Runner> Runners { get; } = new()
     {
         new Runner("Anna", "Nowak"),
         new Runner("Piotr", "Zieliński")
     };
-}
-
-public class Runner
-{
-    public Runner(string firstName, string lastName)
-    {
-        FirstName = firstName;
-        LastName = lastName;
     }
 
-    public string FirstName { get; }
-    public string LastName { get; }
-    public string DisplayName => $"{FirstName} {LastName}";
+    public class Runner
+    {
+        public Runner(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
+        public string FirstName { get; }
+        public string LastName { get; }
+        public string DisplayName => $"{FirstName} {LastName}";
+    }
 }
