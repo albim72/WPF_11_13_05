@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Observable"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid Margin="28">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -17,6 +17,71 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        
+        <TextBlock Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   Text="Lista zawodników"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Margin="0,0,0,22"/>
+
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                Background="Cyan"
+                BorderBrush="MediumVioletRed"
+                BorderThickness="1"
+                CornerRadius="12"
+                Padding="16"
+                Margin="0,0,18,0">
+            <ListBox x:Name="PlayersListBox"
+                     ItemsSource="{Binding Runners}"
+                     FontSize="18"/>
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                Background="Cyan"
+                BorderBrush="MediumVioletRed"
+                BorderThickness="1"
+                CornerRadius="12"
+                Padding="18"
+                Margin="0,0,18,0">
+            <StackPanel>
+                <TextBlock Text="Dodaj zawodnika"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Margin="0,0,0,18"/>
+                <TextBlock Text="Imię"
+                           FontSize="15"
+                           FontWeight="SemiBold" />
+                <TextBox x:Name="FirstNameTextBox"
+                         Text="{Binding NewFirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         FontSize="15"
+                         Height="34"
+                         Margin="0,4,0,14"/>
+
+                <TextBlock Text="Nazwisko"
+                           FontSize="15"
+                           FontWeight="SemiBold" />
+                <TextBox x:Name="LastNameTextBox"
+                         Text="{Binding NewLastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         FontSize="15"
+                         Height="34"
+                         Margin="0,4,0,14"/>
+
+                <TextBlock Text="Numer startowy"
+                           FontSize="15"
+                           FontWeight="SemiBold" />
+                <TextBox x:Name="StartNumberTextBox"
+                        Text="{Binding NewStarNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        FontSize="15"
+                        Height="34"
+                        Margin="0,4,0,14"/>
+
+                <Button x:Name="AddRunnerButton" Content="Dodaj zawodnika"
+                        Height="40"/>
+
+            </StackPanel>
+            
+        </Border>
+
     </Grid>
 </Window>
