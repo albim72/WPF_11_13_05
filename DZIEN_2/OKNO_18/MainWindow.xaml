@@ -1,0 +1,12 @@
+<Window x:Class="WpfDay2Exercise11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:WpfDay2Exercise11.Controls"
+        Title="Ćwiczenie 11 - UserControl" Height="520" Width="760">
+    <StackPanel Margin="24">
+        <TextBlock Text="UserControl: RunnerCard" FontSize="30" FontWeight="Bold" Margin="0,0,0,20" />
+        <controls:RunnerCard RunnerName="Anna Nowak" Distance="Trail 33 km" Status="OK" />
+        <controls:RunnerCard RunnerName="Piotr Zieliński" Distance="Ultra 45 km" Status="WARNING" />
+        <controls:RunnerCard RunnerName="Maria Lis" Distance="Winter 50 km" Status="OK" />
+    </StackPanel>
+</Window>
