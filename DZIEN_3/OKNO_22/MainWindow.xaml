@@ -1,0 +1,19 @@
+<Window x:Class="WpfDay3Exercise03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ćwiczenie 3 - CanExecute" Height="500" Width="720">
+    <Grid Margin="28">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="0,0,20,0">
+            <TextBlock Text="Dodaj zawodnika" FontSize="28" FontWeight="Bold" Margin="0,0,0,18" />
+            <TextBlock Text="Imię i nazwisko" FontWeight="SemiBold" />
+            <TextBox Text="{Binding NewRunnerName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="36" Margin="0,6,0,14" />
+            <Button Content="Dodaj" Command="{Binding AddRunnerCommand}" Height="40" Width="140" HorizontalAlignment="Left" />
+            <TextBlock Text="Przycisk aktywuje się dopiero po wpisaniu tekstu." TextWrapping="Wrap" Margin="0,18,0,0" />
+        </StackPanel>
+        <ListBox Grid.Column="1" ItemsSource="{Binding Runners}" FontSize="16" />
+    </Grid>
+</Window>
