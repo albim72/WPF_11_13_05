@@ -1,0 +1,25 @@
+<Window x:Class="WpfDay3Exercise05.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ćwiczenie 5 - Komunikaty" Height="540" Width="820">
+    <Grid Margin="28">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Background="#EFF6FF" CornerRadius="12" Padding="18" Margin="0,0,14,0">
+            <StackPanel DataContext="{Binding Form}">
+                <TextBlock Text="Formularz" FontSize="26" FontWeight="Bold" Margin="0,0,0,18" />
+                <TextBlock Text="Nazwa zawodnika" />
+                <TextBox Text="{Binding RunnerName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="36" Margin="0,6,0,14" />
+                <Button Content="Wyślij komunikat" Command="{Binding SaveRunnerCommand}" Height="40" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="1" Background="#F8FAFC" CornerRadius="12" Padding="18" BorderBrush="#CBD5E1" BorderThickness="1">
+            <StackPanel DataContext="{Binding Log}">
+                <TextBlock Text="Log komunikatów" FontSize="26" FontWeight="Bold" Margin="0,0,0,18" />
+                <ListBox ItemsSource="{Binding Messages}" FontSize="15" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
