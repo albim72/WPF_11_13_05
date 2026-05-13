@@ -1,0 +1,10 @@
+<Window x:Class="WpfDay3Exercise02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ćwiczenie 2 - ICommand" Height="390" Width="640">
+    <StackPanel Margin="28">
+        <TextBlock Text="Licznik treningów" FontSize="30" FontWeight="Bold" Margin="0,0,0,20" />
+        <TextBlock Text="{Binding TrainingCount, StringFormat=Liczba treningów: {0}}" FontSize="24" Margin="0,0,0,20" />
+        <Button Content="Dodaj trening" Command="{Binding AddTrainingCommand}" Height="42" Width="180" HorizontalAlignment="Left" />
+    </StackPanel>
+</Window>
